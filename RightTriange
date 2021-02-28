@@ -1,0 +1,38 @@
+# Galen Hecht is submitting this for Exam 1.
+# This is the RightTriangle Program.
+# It will calculate the hypotenuse of a right triangle
+# given input of the two shorter sides.
+
+import math
+
+def main():
+   
+   cont = 1
+   while cont == 1:  
+      sideA = -1
+      while sideA <= 0 or sideA >= 100: 
+         sideA = float(input('\nEnter length of side A of the triangle (float): '))
+         if sideA <= 0 or sideA >= 100:
+            print ('Invalid entry for side A. Triangle sides must be greater than 0 and less than 100. Re-enter.')
+      if sideA > 0 and sideA < 100:
+         sideB = -1
+         while sideB <= 0 or sideB >= 100:
+            sideB = float(input('Enter length of side B of the triangle (float): '))
+            if sideB <= 0 or sideB >= 100:
+               print ('Invalid entry for side B. Triangle sides must be greater than 0 and less than 100. Re-enter.')
+      if sideA > 0 and sideA < 100 and sideB > 0 and sideB < 100:
+         hypotenuse = calcHypotenuse(sideA, sideB)
+         print('Hypotenuse of the triangle is ', hypotenuse)
+
+         cont = int(input('\nGo again? Enter 1 for yes: '))
+
+   print ('Goodbye!')     
+
+ # the calcHypotenuse function
+def calcHypotenuse(a,b):
+   c = math.sqrt(a*a + b*b)
+   c = format(c,'7.2f')
+   return c
+# end calcHypotenuse
+
+main()
