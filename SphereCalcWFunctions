@@ -1,0 +1,39 @@
+# Galen Hecht is submitting this for Exam Prep 1
+
+import math  # import the math lib
+
+def main():
+
+   cont = 1
+   while cont == 1:  
+      rSphere = -1
+      while rSphere <= 0: 
+         rSphere = float(input('\nEnter radius of the sphere (float): '))
+         if rSphere <= 0:
+            print ('\nInvalid entry! Radius must be greater than 0. Please re-enter...')
+      if rSphere > 0:
+         saSphere = calcSphereSA(rSphere)
+         volSphere = calcSphereVol(rSphere)
+         print('Surface area of the sphere is ', saSphere)
+         print('Volume of the sphere is ', volSphere)
+      
+
+         cont = int(input('\nKeep going? 1 for yes... '))
+
+   print ('\n\nGoodbye!')     
+
+# the calcSphereSA function
+def calcSphereSA(r):
+    sa = 4*math.pi * r * r
+    sa = format(sa,'7.2f')
+    return sa
+# end calcSphereSA
+
+# the calcSphereVol function
+def calcSphereVol(r):
+    vol = 4/3 * math.pi * r * r * r
+    vol = format(vol,'7.2f')
+    return vol
+# end calcSphereVol
+
+main()
